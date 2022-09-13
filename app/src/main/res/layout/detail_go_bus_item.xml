@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cardView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="8dp"
+    android:layout_marginRight="8dp"
+    android:layout_marginBottom="10dp"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?android:attr/selectableItemBackground"
+    app:cardCornerRadius="4dp"
+    app:cardUseCompatPadding="true"
+    app:contentPadding="8dp">
+    <LinearLayout
+        android:id="@+id/busBtn"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:orientation="horizontal"
+        android:weightSum="100">
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_margin="4dp"
+            android:src="@drawable/ic_baseline_directions_run_24"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="60"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txtBeginDetail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="6dp"
+                android:fontFamily="@font/calibri"
+                android:text="Đón tuyến số 1 metro"
+                android:textColor="#4b4b4b"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtBeginDetailStep1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/calibri"
+                android:layout_marginBottom="6dp"
+                android:text="Xuất phát từ: 40 Đường Trường Sa, Quận Bình Thạnh, Việt Nam"
+                android:textColor="#8a8a8a" />
+            <TextView
+                android:id="@+id/txtBeginDetailStep2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/calibri"
+                android:layout_marginBottom="6dp"
+                android:text="Đón tuyến 91 tại trạm: Cầu Bông"
+                android:textColor="#8a8a8a" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.HomeActivity">
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#512da8"
+        app:elevation="0dp">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:background="#10AF7E">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp">
+
+                <ImageView
+                    android:id="@+id/userBtn"
+                    android:layout_width="48dp"
+                    android:layout_height="35dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="2dp"
+                    android:src="@drawable/ic_person_outline_white_24dp" />
+
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="115dp"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/logo_2" />
+            </RelativeLayout>
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp">
+        <ImageView
+            android:id="@+id/backRouteBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:src="@drawable/ic_arrow_back_black_24dp"/>
+        <TextView
+            android:id="@+id/txtRouteName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:layout_marginLeft="20dp"
+            android:textSize="20dp"
+            android:textColor="#474747"
+            android:text="Tuyến số 1 metro"/>
+    </LinearLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="130dp"
+        android:textColorHint="#FF8A99AF">
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:checkedButton="@id/showTimeRadio"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/showTimeRadio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="15dp"
+                android:layout_marginLeft="36dp"
+                android:background="@drawable/bg_radio_btn"
+                android:button="@null"
+                android:textSize="14dp"
+                android:layoutDirection="rtl"
+                android:paddingHorizontal="20dp"
+                android:text="Biểu đồ giờ"
+                android:textColor="@color/white" />
+
+            <RadioButton
+                android:id="@+id/showBusStationRadio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/bg_radio_btn"
+                android:button="@null"
+                android:layoutDirection="rtl"
+                android:paddingHorizontal="20dp"
+                android:textSize="14dp"
+                android:text="Trạm dừng"
+                android:textColor="@color/white" />
+
+            <RadioButton
+                android:id="@+id/showMapRadio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_radio_btn"
+                android:button="@null"
+                android:layoutDirection="rtl"
+                android:paddingHorizontal="20dp"
+                android:textSize="14dp"
+                android:text="Bản đồ"
+                android:textColor="@color/white" />
+        </RadioGroup>
+
+    </com.google.android.material.textfield.TextInputLayout>
+    <LinearLayout
+        android:id="@+id/formTimeBus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="visible"
+        android:layout_marginTop="220dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/border"
+            android:text="Giờ bắt đầu - Kết thúc"
+            android:layout_marginLeft="40dp"
+            android:padding="8dp"
+            android:textSize="18dp"/>
+        <TextView
+            android:id="@+id/txtRouteTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/border"
+            android:text="5:00 - 10:00"
+            android:drawableStart="@drawable/bus_icon"
+            android:layout_marginLeft="80dp"
+            android:padding="8dp"
+            android:textSize="16dp"/>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/formStationBus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="invisible"
+        android:layout_marginTop="220dp">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:clickable="false"
+            android:descendantFocusability="blocksDescendants"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView11"
+            tools:context=".activity.MainActivity">
+
+            <ListView
+                android:id="@+id/rcv_busListStation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="false"
+                android:descendantFocusability="blocksDescendants"
+                android:focusable="false">
+
+            </ListView>
+        </RelativeLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/formMapBus"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="invisible"
+        android:layout_marginTop="220dp">
+        <fragment
+            android:id="@+id/map"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

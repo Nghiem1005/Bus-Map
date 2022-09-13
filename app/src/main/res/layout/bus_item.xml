@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cardView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="8dp"
+    android:layout_marginRight="8dp"
+    android:layout_marginBottom="10dp"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?android:attr/selectableItemBackground"
+    app:cardCornerRadius="4dp"
+    app:cardUseCompatPadding="true"
+    app:contentPadding="16dp">
+    <LinearLayout
+        android:id="@+id/busBtn"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:orientation="horizontal"
+        android:weightSum="100">
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_margin="8dp"
+            android:src="@drawable/bus_icon"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="60"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/routeNumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="6dp"
+                    android:fontFamily="@font/calibri"
+                    android:text="Tuyến số 1 metro"
+                    android:textColor="#4b4b4b"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/routeSpace"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/calibri"
+                    android:layout_marginBottom="6dp"
+                    android:text="Bến Thành - Suối Tiên"
+                    android:textColor="#8a8a8a" />
+                <TextView
+                    android:id="@+id/routeActive"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/calibri"
+                    android:text="9:00AM - 12:30PM"
+                    android:textColor="#000000"
+                    android:textStyle="italic" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="40"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/routePrice"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/calibri"
+                    android:text="20000 VND"
+                    android:textAlignment="textEnd"
+                    android:textColor="#f5a622"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/savedRoute"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="4dp"
+                    android:fontFamily="@font/calibri"
+                    android:text="Lưu"
+                    android:textAlignment="textEnd"
+                    android:textColor="#EF1F1F"
+                    android:textSize="20dp"
+                    android:textStyle="bold"/>
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
